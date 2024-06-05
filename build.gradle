@@ -3,7 +3,6 @@ plugins {
     id "idea"
     id "maven-publish"
     id "com.gradle.plugin-publish" version "0.14.0"
-//    id "com.github.hierynomus.license" version "0.15.0"
 }
 
 group = 'net.minecraftforge.gradle'
@@ -58,6 +57,8 @@ dependencies {
     // moved to the beginning to be the overrider
     implementation 'org.ow2.asm:asm-debug-all:5.0.3'
     implementation 'com.google.guava:guava:18.0'
+
+    implementation 'org.glavo:pack200:0.3.0'
 
     implementation 'net.sf.opencsv:opencsv:2.3' // reading CSVs.. also used by SpecialSource
     implementation 'com.cloudbees:diff4j:1.1' // for difing and patching

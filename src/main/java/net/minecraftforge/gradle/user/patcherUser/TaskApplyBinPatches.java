@@ -42,7 +42,7 @@ import java.util.HashSet;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
 import java.util.jar.JarOutputStream;
-import java.util.jar.Pack200;
+import org.glavo.pack200.Pack200;
 import java.util.regex.Pattern;
 import java.util.zip.*;
 
