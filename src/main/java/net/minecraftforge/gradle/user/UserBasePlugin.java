@@ -735,7 +735,7 @@ public abstract class UserBasePlugin<T extends UserBaseExtension> extends BasePl
         if (this.hasClientRun()) {
             JavaExec exec = makeTask("runClient", JavaExec.class);
             exec.getOutputs().dir(delayedFile(REPLACE_RUN_DIR));
-            exec.setMain(GRADLE_START_CLIENT);
+            exec.getMainClass().set("GRADLE_START_CLIENT");
             exec.doFirst(task -> ((JavaExec) task).workingDir(delayedFile(REPLACE_RUN_DIR)));
             exec.setStandardOutput(System.out);
             exec.setErrorOutput(System.err);
@@ -751,7 +751,7 @@ public abstract class UserBasePlugin<T extends UserBaseExtension> extends BasePl
         if (this.hasServerRun()) {
             JavaExec exec = makeTask("runServer", JavaExec.class);
             exec.getOutputs().dir(delayedFile(REPLACE_RUN_DIR));
-            exec.setMain(GRADLE_START_SERVER);
+            exec.getMainClass().set(GRADLE_START_SERVER);
             exec.doFirst(task -> ((JavaExec) task).workingDir(delayedFile(REPLACE_RUN_DIR)));
             exec.setStandardOutput(System.out);
             exec.setStandardInput(System.in);
