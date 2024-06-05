@@ -77,12 +77,12 @@ public abstract class UserVanillaBasePlugin<T extends UserBaseExtension> extends
     @Override
     protected void afterEvaluate() {
         // read version file if exists
-        {
+        try {
             File jsonFile = delayedFile(Constants.JSON_VERSION).call();
             if (jsonFile.exists()) {
                 parseAndStoreVersion(jsonFile, jsonFile.getParentFile());
             }
-        }
+        } catch (Exception ignored) {}
 
         super.afterEvaluate();
     }
