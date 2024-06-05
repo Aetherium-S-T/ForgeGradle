@@ -71,6 +71,7 @@ public abstract class UserVanillaBasePlugin<T extends UserBaseExtension> extends
         String artifact = getJarName() + (isDecomp ? "Src" : "Bin");
         String version = delayedString(REPLACE_MC_VERSION).call() + (useLocalCache ? "-PROJECT(" + project.getName() + ")" : "");
 
+
         project.getDependencies().add(CONFIG_MC, ImmutableMap.of("group", group, "name", artifact, "version", version));
     }
 
